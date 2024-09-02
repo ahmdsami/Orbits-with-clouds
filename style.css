@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100dvh;
+    background-color: #a4c3ec;
+    display: grid;
+    place-items: center;
+
+    .sun {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        background:linear-gradient(125deg ,orange 35%, gold,yellow);
+        box-shadow: 0 1px 15px 1px #44444465;
+        border-radius: 50%;
+        animation: sun-rotation 8s linear infinite;
+
+        .earth {
+            
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background: linear-gradient(to right, #023E8A, #0077B6, #0096C7);
+        
+            animation: earth-rotation 4s linear infinite;
+            
+            .moon {
+                width: 30%;
+                height: 30%;
+                border-radius: 50%;
+                background: linear-gradient(to right,rgba(128, 128, 128, 0.301), wheat ,#eee,#eee, #efefef,rgba(128, 128, 128, 0.301));
+                animation: moon-rotation 2s linear infinite;
+            }     
+        }
+    }
+    .cloud-parent, 
+    .cloud-parent-2{
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 20px;
+        
+
+        .cloud {
+            filter: blur(7px);
+            border-radius: 50%;
+            background: linear-gradient(to right, #909090, #ababab, #ccc, #f6f6f6);
+            width: 80px;
+            aspect-ratio: 1;
+        }
+        .one {
+            transform: translate(20px, 120px);
+        }
+        .two {
+            transform: translate(55px, 100px);
+        }
+        .three {
+            transform: translate(85px, -40px);
+        }
+        .four {
+            transform: translate(120px, -60px);
+        }
+
+        .five {
+            transform: translate(150px, -180px);
+        }
+        .six {
+            transform: translate(180px, -210px);
+        }
+        .seven {
+            transform: translate(210px, -350px);
+        }
+        .eight {
+            transform: translate(150px, -480px);
+        }
+    }
+    .cloud-parent {
+        left: 50px;
+    }
+    .cloud-parent-2 {
+        right: 50px;
+    }
+}
+
+
+@keyframes sun-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes earth-rotation {
+    from {
+        transform: translate(-120px, -120px)rotate(0deg);
+    }
+    to {
+        transform: translate(-120px, -120px) rotate(360deg);
+    }
+}
+
+@keyframes moon-rotation {
+    from {
+        transform: translate(-30px, -30px) rotate(0deg);
+    }
+    to {
+        transform: translate(-30px, -30px) rotate(360deg);
+    }
+}
